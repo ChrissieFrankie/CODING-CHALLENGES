@@ -25,6 +25,7 @@ The college experience has fried the engine mentioned above.
 ## Goal :trophy:
 
 - Get a high-paying job to save money to start a business that generates free cash flow to party every day.
+- Not become a diversity hire.
 
 ## Challenges :mountain:
 
