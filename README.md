@@ -12,7 +12,7 @@ The college experience has fried the engine mentioned above.
 
 - The challenges will range from simple to extremely difficult as I progress.
 - There will be proofs by the time I get to code forces. 
-- The languages featured will be Python and C#. 
+- The language featured will be C++. Python is for pusey kats. 
 
 ## Sources :book:
 
