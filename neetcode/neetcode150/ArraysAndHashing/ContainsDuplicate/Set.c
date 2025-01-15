@@ -99,10 +99,46 @@ bool exists(Set *set, int value)
     }
 }
 
+void delete(Set *set, int value)
+{
+    if (set == NULL) // Null set was provided
+    {
+        fprintf(stderr, "TRYING TO ADD A VALUE TO A NULL SET\n");
+        return;
+    }
+    int temp = value; // For later
+    int product = 1;  // For later
+    if (temp > 9)     // Process value
+    {
+        while (temp > 9) // Traverse digits
+        {
+            temp /= 10; // Remove last digit
+            product *= 10;
+        }
+    }
+    if (set->digits[temp] != NULL) // The digit exists
+    {
+        if (product == 1) // The only digit
+        {
+            free(set->digits[temp]);  // Digit no longer needed
+            set->digits[temp] = NULL; // Value scraped
+        }
+        else
+        {
+            int remainder = value % product;
+            delete (set->digits[temp], remainder); // We continue the deletion process
+        }
+    }
+    // Value doesn't exist, why bother
+}
+
 int main(void)
 {
     Set *digits = create(); // We've created our digits set
     add(digits, 998);
+    printf("DOES 998 EXIST? %d\n", exists(digits, 998));
+    printf("DOES 999 EXIST? %d\n", exists(digits, 999));
+    delete (digits, 998);
     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
     printf("HELLO WORLD!\n");
