@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #ifndef SET_H
 #define SET_H
 
