@@ -96,7 +96,7 @@ bool exists(Set *set, int value)
     }
 }
 
-void remove(Set *set, int value)
+void discard(Set *set, int value)
 {
     if (set == NULL) // Null set was provided
     {
@@ -123,7 +123,7 @@ void remove(Set *set, int value)
         else
         {
             int remainder = value % product;
-            remove (set->digits[temp], remainder); // We continue the deletion process
+            discard(set->digits[temp], remainder); // We continue the deletion process
         }
     }
     // Value doesn't exist, why bother
@@ -135,7 +135,7 @@ int main(void)
     add(digits, 998);
     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
-    remove(digits, 998);
+    discard(digits, 998);
     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
     printf("HELLO WORLD!\n");

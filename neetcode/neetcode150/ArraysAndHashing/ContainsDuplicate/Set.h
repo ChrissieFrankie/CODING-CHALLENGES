@@ -9,7 +9,7 @@ typedef struct Set
 void create();
 void add(Set* set, int value);
 bool exists(Set* set, int value);
-void remove(Set *set, int value);
-
+void discard(Set* set, int value);
+void freeSet(Set* set);
 
 #endif
