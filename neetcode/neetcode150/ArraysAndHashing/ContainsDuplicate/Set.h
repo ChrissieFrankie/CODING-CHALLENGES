@@ -6,7 +6,7 @@ typedef struct Set
     struct Set* digits[10];
 } Set;
 
-void create();
+Set* create();
 void add(Set* set, int value);
 bool exists(Set* set, int value);
 void discard(Set* set, int value);
