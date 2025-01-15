@@ -1,11 +1,8 @@
+/* The Set is more of a trie/tree*/
+
 #include "stdio.h"
 #include "stdlib.h"
-
-typedef enum
-{
-    false,
-    true
-} bool;
+#include "stdbool.h"
 
 typedef struct Set // holds decimal values
 {
@@ -99,7 +96,7 @@ bool exists(Set *set, int value)
     }
 }
 
-void delete(Set *set, int value)
+void remove(Set *set, int value)
 {
     if (set == NULL) // Null set was provided
     {
@@ -126,7 +123,7 @@ void delete(Set *set, int value)
         else
         {
             int remainder = value % product;
-            delete (set->digits[temp], remainder); // We continue the deletion process
+            remove (set->digits[temp], remainder); // We continue the deletion process
         }
     }
     // Value doesn't exist, why bother
@@ -138,7 +135,7 @@ int main(void)
     add(digits, 998);
     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
-    delete (digits, 998);
+    remove(digits, 998);
     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
     printf("HELLO WORLD!\n");
