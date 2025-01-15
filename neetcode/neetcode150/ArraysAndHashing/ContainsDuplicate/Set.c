@@ -142,16 +142,16 @@ void freeSet(Set* set) // Freeing the entire set
     free(set);
 }
 
-int main(void)
-{
-    Set *digits = create(); // We've created our digits set
-    add(digits, 998);
-    printf("DOES 998 EXIST? %d\n", exists(digits, 998));
-    printf("DOES 999 EXIST? %d\n", exists(digits, 999));
-    discard(digits, 998);
-    printf("DOES 998 EXIST? %d\n", exists(digits, 998));
-    printf("DOES 999 EXIST? %d\n", exists(digits, 999));
-    printf("HELLO WORLD!\n");
-    freeSet(digits);
-    return 0;
-}
+// int main(void)
+// {
+//     Set *digits = create(); // We've created our digits set
+//     add(digits, 998);
+//     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
+//     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
+//     discard(digits, 998);
+//     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
+//     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
+//     printf("HELLO WORLD!\n");
+//     freeSet(digits);
+//     return 0;
+// }
