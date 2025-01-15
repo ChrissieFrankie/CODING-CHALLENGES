@@ -2,7 +2,7 @@
 
 ## Brief overview :memo:
 
-The current repository you're exploring is a collection of coding challenges and solutions that will rev up my problem-solving coding engine lodged somewhere inside my brain.
+The current repository you're exploring is a collection of coding challenges and solutions that will rev up my problem-solving coding engine lodged somewhere inside my brain. I'll tackle the problem in C++ first, then C to gain an appreciation for C++ and practice implementing Data Structures from scratch.
 
 ## Context :chart_with_upwards_trend:
 
