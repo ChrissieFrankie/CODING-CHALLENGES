@@ -129,6 +129,19 @@ void discard(Set *set, int value)
     // Value doesn't exist, why bother
 }
 
+void freeSet(Set* set) // Freeing the entire set
+{
+    if (set == NULL) return;
+    for (int i = 0; i < 10; i++) // Iterate through its digits / sets
+    {
+        if (set->digits[i] != NULL) // Digit set exists
+        {
+            freeSet(set->digits[i]);
+        } 
+    }
+    free(set);
+}
+
 int main(void)
 {
     Set *digits = create(); // We've created our digits set
@@ -139,5 +152,6 @@ int main(void)
     printf("DOES 998 EXIST? %d\n", exists(digits, 998));
     printf("DOES 999 EXIST? %d\n", exists(digits, 999));
     printf("HELLO WORLD!\n");
+    freeSet(digits);
     return 0;
 }
