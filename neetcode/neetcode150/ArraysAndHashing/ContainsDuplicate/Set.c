@@ -1,13 +1,22 @@
 #include "stdio.h"
 
-typedef struct Set // our custom set will hold digit values
-{ 
-    struct Set* digits;
+typedef struct Set // holds decimal values
+{
+    struct Set* digits[10];
 } Set;
 
-Set* create()
+Set* create() // Returns a pointer to a new Set
 {
-    Set* newSet = (Set*)malloc(sizeof(Set)); // we've allocated memory for the new set
+    Set* newSet = (Set*)(malloc(sizeof(Set))); // Allocate memory for new Set
+    if (newSet == NULL) // Still NULL?
+    {
+        fprintf(stderr, "UNABLE TO ALLOCATE MEMORY FOR NEW SET!\n"); // Throw error
+        return NULL;
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        newSet->digits[i] = NULL;
+    }
     return newSet;
 }
 
