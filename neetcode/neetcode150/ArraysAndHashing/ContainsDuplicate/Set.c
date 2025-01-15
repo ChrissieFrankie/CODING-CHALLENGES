@@ -1,14 +1,21 @@
 #include "stdio.h"
+#include "stdlib.h"
+
+typedef enum
+{
+    false,
+    true
+} bool;
 
 typedef struct Set // holds decimal values
 {
-    struct Set* digits[10];
+    struct Set *digits[10];
 } Set;
 
-Set* create() // Returns a pointer to a new Set
+Set *create() // Returns a pointer to a new Set
 {
-    Set* newSet = (Set*)(malloc(sizeof(Set))); // Allocate memory for new Set
-    if (newSet == NULL) // Still NULL?
+    Set *newSet = (Set *)(malloc(sizeof(Set))); // Allocate memory for new Set
+    if (newSet == NULL)                         // Still NULL?
     {
         fprintf(stderr, "UNABLE TO ALLOCATE MEMORY FOR NEW SET!\n"); // Throw error
         return NULL;
@@ -20,39 +27,84 @@ Set* create() // Returns a pointer to a new Set
     return newSet;
 }
 
-void add(Set* set, int value)
+void add(Set *set, int value)
 {
-    if (set == NULL) // a null set was provided
+    if (set == NULL) // Null set was provided
     {
         fprintf(stderr, "TRYING TO ADD A VALUE TO A NULL SET\n");
         return;
     }
-    int temp = value; // for later
-    int product = 1; // for later
-    if (temp > 9) // process value
+    int temp = value; // For later
+    int product = 1;  // For later
+    if (temp > 9)     // Process value
     {
-        while (temp > 9) // traverse digits
+        while (temp > 9) // Traverse digits
         {
-            temp /= 10; // remove last digit
-            product *= 10; 
+            temp /= 10; // Remove last digit
+            product *= 10;
         }
     }
-    set->digits[temp] = (Set*)(malloc(sizeof(Set))); // record index corresponding to digit
-    if (set->digits[temp] == NULL) // didn't allocate memeory
+    if (set->digits[temp] == NULL)
     {
-        fprintf(stderr, "UNABLE TO ALLOCATE MEMEORY FOR SET AT INDEX %d\n", temp);
-        return;
+        set->digits[temp] = (Set *)(malloc(sizeof(Set))); // Record index corresponding to digit
+        if (set->digits[temp] == NULL)                    // Didn't allocate memeory
+        {
+            fprintf(stderr, "UNABLE TO ALLOCATE MEMEORY FOR SET AT INDEX %d\n", temp);
+            return;
+        }
+        for (int i = 0; i < 10; i++) // Initialize digits array
+        {
+            set->digits[temp]->digits[i] = NULL;
+        }
     }
     int remainder = value % product;
-    if (product != 1) // there are more digits to save
+    if (product != 1) // There are more digits to save
     {
         add(set->digits[temp], remainder);
     }
 }
 
+bool exists(Set *set, int value)
+{
+    if (set == NULL) // Null set was provided
+    {
+        fprintf(stderr, "TRYING TO CHECK A SET THAT DOESN'T EXIST\n");
+        return false;
+    }
+    int temp = value; // For later
+    int product = 1;  // For later
+    if (temp > 9)     // Process value
+    {
+        while (temp > 9) // Traverse digits
+        {
+            temp /= 10; // Remove last digit
+            product *= 10;
+        }
+    }
+    if (set->digits[temp] != NULL) // Digit exists
+    {
+        if (product == 1) // Single digit left
+        {
+            return true; // Value exists
+        }
+        else // There are more digits to check
+        {
+            int remainder = value % product;
+            return exists(set->digits[temp], remainder); // Continue checking
+        }
+    }
+    else
+    {
+        return false; // No value
+    }
+}
+
 int main(void)
 {
-    Set* digits = create(); // we've created our digits set
+    Set *digits = create(); // We've created our digits set
+    add(digits, 998);
+    printf("DOES 998 EXIST? %d\n", exists(digits, 998));
+    printf("DOES 999 EXIST? %d\n", exists(digits, 999));
     printf("HELLO WORLD!\n");
     return 0;
 }
