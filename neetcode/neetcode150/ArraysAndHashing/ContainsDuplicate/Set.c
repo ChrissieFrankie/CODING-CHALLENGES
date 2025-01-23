@@ -7,6 +7,7 @@
 typedef struct Set // holds decimal values
 {
     struct Set *digits[10];
+    unsigned char length;
 } Set;
 
 Set *create() // Returns a pointer to a new Set
@@ -21,6 +22,7 @@ Set *create() // Returns a pointer to a new Set
     {
         newSet->digits[i] = NULL;
     }
+    newSet-> length = 0;
     return newSet;
 }
 
