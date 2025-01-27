@@ -61,8 +61,8 @@ void add(WholeNumberSet *set, unsigned int number) // Adds a number to the set
     }
     while (set != NULL) // Keeps the stack trace shallow
     {
-        unsigned int digit = number % 10;     // Store the least value
-        unsigned int newNumber = number / 10; // Trim to get new value
+        unsigned int digit = number % DIGITS_COUNT;     // Store the least value
+        unsigned int newNumber = number / DIGITS_COUNT; // Trim to get new value
         if (set->digits[digit] == NULL)       // Need to allocate memory for new digit
         {
             set->digits[digit] = newWholeNumberSet();
@@ -86,9 +86,52 @@ void add(WholeNumberSet *set, unsigned int number) // Adds a number to the set
     }
 }
 
+bool contains(WholeNumberSet *set, unsigned int number)
+{
+    if (set == NULL) // Assure set has been allocated
+    {
+        fprintf(stderr, "FAILED TO LOOK UP A NUMBER IN AN UNALLOCATED SET!\n");
+        return false;
+    }
+    while (set != NULL)
+    {
+        unsigned int digit = number % DIGITS_COUNT;     // Store the least value
+        unsigned int newNumber = number / DIGITS_COUNT; // Trim to get new value
+        if (set->digits[digit] != NULL)       // Digit is stored
+        {
+            if (newNumber == 0)
+            {
+                if (set->terminates[digit] != NULL) // Terminating flag exists
+                {
+                    return *(set->terminates[digit]); // Number is contained or not
+                }
+                else
+                {
+                    return false; // Number isn't contained
+                }
+            }
+            else
+            {
+                set = set->digits[digit];
+                number = newNumber; // More digits to instigate
+            }
+        }
+        else
+        {
+            return false; // Number isn't contained
+        }
+    }
+}
+
 int main(void)
 {
     WholeNumberSet *set = newWholeNumberSet();
+    add(set, 55);
+    printf("CONTAINS 55? %d\n", contains(set, 55));
+    printf("CONTAINS 5? %d\n", contains(set, 5));
+    add(set, 5);
+    printf("CONTAINS 55? %d\n", contains(set, 55));
+    printf("CONTAINS 5? %d\n", contains(set, 5));
     freeWholeNumberSet(set);
     printf("WORKS!\n");
     return 0;
