@@ -33,3 +33,4 @@ release/
 
 # Log files
 *.log
+test.c

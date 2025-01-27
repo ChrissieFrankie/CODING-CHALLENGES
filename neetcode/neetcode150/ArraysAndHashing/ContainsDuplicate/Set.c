@@ -1,4 +1,7 @@
-/* The Set is more of a trie/tree*/
+/* 
+    The Set is more of a trie/tree
+    but it extracts the digits one by one from the largest place
+*/
 
 #include "stdio.h"
 #include "stdlib.h"
