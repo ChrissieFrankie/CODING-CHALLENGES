@@ -11,14 +11,14 @@
 
 typedef struct WholeNumberSet // Used to store all the digits used
 {
-    struct WholeNumberSet* digits[DIGITS_COUNT]; // 0 through 9
-    bool* terminates[DIGITS_COUNT];
+    struct WholeNumberSet *digits[DIGITS_COUNT]; // 0 through 9
+    bool *terminates[DIGITS_COUNT];
 } WholeNumberSet;
 
-WholeNumberSet* newWholeNumberSet() // Used to create a new set
+WholeNumberSet *newWholeNumberSet() // Used to create a new set
 {
-    WholeNumberSet* set = (WholeNumberSet*)(malloc(sizeof(WholeNumberSet))); // Allocate memory for set
-    if (set == NULL) // set is still NULL
+    WholeNumberSet *set = (WholeNumberSet *)(malloc(sizeof(WholeNumberSet))); // Allocate memory for set
+    if (set == NULL)                                                          // set is still NULL
     {
         fprintf(stderr, "FAILED TO ALLOCATE MEMORY FOR SET!\n");
         return NULL;
@@ -31,7 +31,7 @@ WholeNumberSet* newWholeNumberSet() // Used to create a new set
     return set;
 }
 
-void freeWholeNumberSet(WholeNumberSet* set) // Free everything in the set
+void freeWholeNumberSet(WholeNumberSet *set) // Free everything in the set
 {
     if (set == NULL) // the set is NULL
     {
@@ -52,9 +52,43 @@ void freeWholeNumberSet(WholeNumberSet* set) // Free everything in the set
     free(set);
 }
 
+void add(WholeNumberSet *set, unsigned int number) // Adds a number to the set
+{
+    if (set == NULL) // Assure set has been allocated
+    {
+        fprintf(stderr, "FAILED TO ADD A NUMBER TO AN UNALLOCATED SET!\n");
+        return;
+    }
+    unsigned int digit = number % 10;     // Store the least value
+    unsigned int newNumber = number / 10; // Trim to get new value
+    if (set->digits[digit] == NULL)       // Need to allocate memory for new digit
+    {
+        set->digits[digit] = newWholeNumberSet();
+    }
+    if (newNumber == 0) // Number has terminated
+    {
+        if (set->terminates[digit] == NULL) // Need to allocate memory for new number
+        {
+            set->terminates[digit] = (bool *)malloc(sizeof(bool));
+            if (set->terminates[digit] == NULL) // Assure bool has been allocated
+            {
+                fprintf(stderr, "FAILED TO ALLOCATE MEMORY!");
+                return;
+            }
+            *(set->terminates[digit]) = true; // Saved number
+            return;
+        }
+    }
+    else
+    {
+
+        add(set->digits[digit], newNumber); // Number has more digits
+    }
+}
+
 int main(void)
 {
-    WholeNumberSet* set = newWholeNumberSet();
+    WholeNumberSet *set = newWholeNumberSet();
     freeWholeNumberSet(set);
     printf("WORKS!\n");
     return 0;
