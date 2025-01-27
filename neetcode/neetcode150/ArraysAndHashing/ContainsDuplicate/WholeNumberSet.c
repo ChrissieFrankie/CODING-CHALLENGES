@@ -121,7 +121,7 @@ bool contains(WholeNumberSet *set, unsigned int number) // Determines whether th
     return false; // Number isn't contained
 }
 
-void delete(WholeNumberSet *set, unsigned int number) // Deletes a number
+void discard(WholeNumberSet *set, unsigned int number) // Deletes a number
 {
     if (set == NULL) // Assure set has been allocated
     {
@@ -170,22 +170,22 @@ void delete(WholeNumberSet *set, unsigned int number) // Deletes a number
     }
 }
 
-int main(void)
-{
-    WholeNumberSet *set = newWholeNumberSet();
-    add(set, 55);
-    printf("CONTAINS 55? %d\n", contains(set, 55));
-    printf("CONTAINS 5? %d\n", contains(set, 5));
-    add(set, 5);
-    printf("CONTAINS 55? %d\n", contains(set, 55));
-    printf("CONTAINS 5? %d\n", contains(set, 5));
-    delete (set, 5);
-    printf("CONTAINS 55? %d\n", contains(set, 55));
-    printf("CONTAINS 5? %d\n", contains(set, 5));
-    delete (set, 55);
-    printf("CONTAINS 55? %d\n", contains(set, 55));
-    printf("CONTAINS 5? %d\n", contains(set, 5));
-    freeWholeNumberSet(set);
-    printf("WORKS!\n");
-    return 0;
-}
+// int main(void)
+// {
+//     WholeNumberSet *set = newWholeNumberSet();
+//     add(set, 55);
+//     printf("CONTAINS 55? %d\n", contains(set, 55));
+//     printf("CONTAINS 5? %d\n", contains(set, 5));
+//     add(set, 5);
+//     printf("CONTAINS 55? %d\n", contains(set, 55));
+//     printf("CONTAINS 5? %d\n", contains(set, 5));
+//     discard(set, 5);
+//     printf("CONTAINS 55? %d\n", contains(set, 55));
+//     printf("CONTAINS 5? %d\n", contains(set, 5));
+//     discard(set, 55);
+//     printf("CONTAINS 55? %d\n", contains(set, 55));
+//     printf("CONTAINS 5? %d\n", contains(set, 5));
+//     freeWholeNumberSet(set);
+//     printf("WORKS!\n");
+//     return 0;
+// }
