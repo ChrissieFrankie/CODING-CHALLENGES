@@ -1,19 +1,19 @@
 #include <stdio.h>
-#include <Set.h>
+#include <WholeNumberSet.h>
 #include <stdbool.h>
 
 bool containsDuplicateUno(int* nums, int numsSize) // Solution uno
 {
-    Set* set = create(); // Create set
+    WholeNumberSet* set = newWholeNumberSet(); // Create set
     for (int i = 0; i < numsSize; i++) // Iterate through nums
     {
-        if (exists(set, nums[i])) // If the num already exists
+        if (contains(set, nums[i])) // If the num already exists
         {
             return true; // There are duplicates
         }
         add(set, nums[i]); // Keep adding nums to the set
     }
-    freeSet(set);
+    freeWholeNumberSet(set);
     return false; // No duplicates
 }
 
@@ -32,7 +32,5 @@ int main(void)
     arrayTwo[2] = 3;
     arrayTwo[3] = 4;
     printf("Does array [1 2 3 4] contain duplicates?: %d\n", containsDuplicateUno(arrayTwo, 4));
-
     return 0;
 }
-
