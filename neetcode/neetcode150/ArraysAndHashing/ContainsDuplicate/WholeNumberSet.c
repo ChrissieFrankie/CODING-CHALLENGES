@@ -59,30 +59,30 @@ void add(WholeNumberSet *set, unsigned int number) // Adds a number to the set
         fprintf(stderr, "FAILED TO ADD A NUMBER TO AN UNALLOCATED SET!\n");
         return;
     }
-    unsigned int digit = number % 10;     // Store the least value
-    unsigned int newNumber = number / 10; // Trim to get new value
-    if (set->digits[digit] == NULL)       // Need to allocate memory for new digit
+    while (set != NULL) // Keeps the stack trace shallow
     {
-        set->digits[digit] = newWholeNumberSet();
-    }
-    if (newNumber == 0) // Number has terminated
-    {
-        if (set->terminates[digit] == NULL) // Need to allocate memory for new number
+        unsigned int digit = number % 10;     // Store the least value
+        unsigned int newNumber = number / 10; // Trim to get new value
+        if (set->digits[digit] == NULL)       // Need to allocate memory for new digit
         {
-            set->terminates[digit] = (bool *)malloc(sizeof(bool));
-            if (set->terminates[digit] == NULL) // Assure bool has been allocated
+            set->digits[digit] = newWholeNumberSet();
+        }
+        if (newNumber == 0) // Number has terminated
+        {
+            if (set->terminates[digit] == NULL) // Need to allocate memory for new number
             {
-                fprintf(stderr, "FAILED TO ALLOCATE MEMORY!");
+                set->terminates[digit] = (bool *)malloc(sizeof(bool));
+                if (set->terminates[digit] == NULL) // Assure bool has been allocated
+                {
+                    fprintf(stderr, "FAILED TO ALLOCATE MEMORY!");
+                    return;
+                }
+                *(set->terminates[digit]) = true; // Saved number
                 return;
             }
-            *(set->terminates[digit]) = true; // Saved number
-            return;
         }
-    }
-    else
-    {
-
-        add(set->digits[digit], newNumber); // Number has more digits
+        set = set->digits[digit];
+        number = newNumber; // Number may have more digits
     }
 }
 
