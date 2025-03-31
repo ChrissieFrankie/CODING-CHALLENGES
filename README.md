@@ -16,6 +16,7 @@ The college experience has fried the engine mentioned above.
 ## Sources :book:
 
 - [NeetCode](https://neetcode.io/) at the moment. 
+- [LintCode](https://www.lintcode.com/) for a bit.
 - CodeWars, for a bit. 
 - HackerRank, for a bit.
 - CodeForces for sure eventually. 
@@ -29,3 +30,4 @@ The college experience has fried the engine mentioned above.
 ## Challenges :mountain:
 
 - [NeetCode 150](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150)
+- [LintCode](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/lintcode)
