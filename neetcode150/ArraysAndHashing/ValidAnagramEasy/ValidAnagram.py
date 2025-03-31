@@ -16,6 +16,7 @@ class Solution:
         # create two avl trees / two red-black trees
         # use one tree as a tracker
         # once that tracker tree is empty we can say its an anagram
+        # review how to write an avl tree / red black tree from scratch its been half a decade
         pass
 
         
