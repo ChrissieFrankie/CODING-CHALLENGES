@@ -17,7 +17,6 @@ The college experience has fried the engine mentioned above.
 
 - [NeetCode](https://neetcode.io/) at the moment. 
 - [LintCode](https://www.lintcode.com/) for a bit.
-- CodeWars, for a bit. 
 - HackerRank, for a bit.
 - CodeForces for sure eventually.
 
