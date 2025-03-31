@@ -19,8 +19,7 @@ The college experience has fried the engine mentioned above.
 - [LintCode](https://www.lintcode.com/) for a bit.
 - CodeWars, for a bit. 
 - HackerRank, for a bit.
-- CodeForces for sure eventually. 
-- Project Euler here and there. 
+- CodeForces for sure eventually.
 
 ## Goal :trophy:
 
