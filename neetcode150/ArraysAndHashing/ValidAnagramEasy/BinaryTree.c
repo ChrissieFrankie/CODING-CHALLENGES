@@ -21,12 +21,19 @@ LetterNode* createLetterNode(char letter)
     return letterNode;
 }
 
+void freeLetterNode(LetterNode* letterNode)
+{
+    free(letterNode->count);
+    free(letterNode);
+}
+
 int main(void)
 {
     printf("Hello, World!\n");
     LetterNode* a = createLetterNode('a');
     printf("Letter: %c\n", a->letter);
     printf("Count: %d\n", a->count->value);
+    freeLetterNode(a);
     return 0;
 }
 
