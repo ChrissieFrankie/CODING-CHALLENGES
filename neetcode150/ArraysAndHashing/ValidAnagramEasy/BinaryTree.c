@@ -12,7 +12,7 @@ typedef struct LetterNode // Create a node to store the info of a word's letter
     Count* count;
 } LetterNode;
 
-LetterNode* createLetterNode(char letter)
+LetterNode* createLetterNode(char letter) // Create a letter node given a letter
 {
     LetterNode* letterNode = (LetterNode*)malloc(sizeof(LetterNode));
     letterNode->letter = letter;
@@ -21,7 +21,7 @@ LetterNode* createLetterNode(char letter)
     return letterNode;
 }
 
-void freeLetterNode(LetterNode* letterNode)
+void freeLetterNode(LetterNode* letterNode) // Free a letter node to prevent memory leaks
 {
     free(letterNode->count);
     free(letterNode);
