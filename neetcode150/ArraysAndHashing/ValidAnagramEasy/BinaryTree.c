@@ -21,7 +21,7 @@ LetterTreeNode* createLetterTreeNode(char letter) // Create a letter node given 
     return letterTreeNode;
 }
 
-void freeLetterTreeNode(LetterTreeNode* letterTreeNode)
+void freeLetterTreeNode(LetterTreeNode* letterTreeNode) // Free the memory allocated for a letter tree node
 {
     free(letterTreeNode->count);
     free(letterTreeNode);
