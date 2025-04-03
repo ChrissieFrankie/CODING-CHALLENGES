@@ -6,6 +6,8 @@ typedef struct Count // Create a bitfiled to store the frequency of a letter in 
     unsigned int value : 4;
 } Count;
 
+typedef struct LetterTreeNode LetterTreeNode;
+
 typedef struct LetterTreeNode // Create a node to store the info of a word's letter
 {
     unsigned char letter;
