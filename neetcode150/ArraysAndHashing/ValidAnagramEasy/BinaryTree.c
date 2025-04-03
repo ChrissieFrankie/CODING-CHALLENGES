@@ -1,9 +1,14 @@
 #include <stdio.h>
 
-typedef struct LetterNode
+typedef struct Count // Create a bitfiled to store the frequency of a letter in a word
+{
+    unsigned int value : 4;
+} Count;
+
+typedef struct LetterNode // Create a node to store the info of a word's letter
 {
     unsigned char letter;
-    unsigned char count;
+    Count count;
 } LetterNode;
 
 int main(void)
