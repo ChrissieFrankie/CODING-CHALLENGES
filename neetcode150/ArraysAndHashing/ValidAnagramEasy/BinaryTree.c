@@ -8,12 +8,13 @@ typedef struct Count // Create a bitfiled to store the frequency of a letter in 
 typedef struct LetterNode // Create a node to store the info of a word's letter
 {
     unsigned char letter;
-    Count count;
+    Count* count;
 } LetterNode;
 
 int main(void)
 {
     printf("Hello, World!\n");
+
     return 0;
 }
 
