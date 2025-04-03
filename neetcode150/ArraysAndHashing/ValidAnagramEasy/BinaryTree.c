@@ -9,6 +9,8 @@ typedef struct Count // Create a bitfiled to store the frequency of a letter in 
 typedef struct LetterTreeNode // Create a node to store the info of a word's letter
 {
     unsigned char letter;
+    LetterTreeNode* left;
+    LetterTreeNode* right;
     Count* count;
 } LetterTreeNode;
 
@@ -16,6 +18,8 @@ LetterTreeNode* createLetterTreeNode(char letter) // Create a letter node given 
 {
     LetterTreeNode* letterTreeNode = (LetterTreeNode*)malloc(sizeof(LetterTreeNode));
     letterTreeNode->letter = letter;
+    letterTreeNode->left = NULL;
+    letterTreeNode->right = NULL;
     letterTreeNode->count = (Count*)malloc(sizeof(Count));
     letterTreeNode->count->value = 1;
     return letterTreeNode;
@@ -30,10 +34,10 @@ void freeLetterTreeNode(LetterTreeNode* letterTreeNode) // Free the memory alloc
 int main(void)
 {
     printf("Hello, World!\n");
-    LetterTreeNode* a = createLetterNode('a');
+    LetterTreeNode* a = createLetterTreeNode('a');
     printf("Letter: %c\n", a->letter);
     printf("Count: %d\n", a->count->value);
-    freeLetterNode(a);
+    freeLetterTreeNode(a);
     return 0;
 }
 
