@@ -21,6 +21,12 @@ LetterTreeNode* createLetterTreeNode(char letter) // Create a letter node given 
     return letterTreeNode;
 }
 
+void freeLetterTreeNode(LetterTreeNode* letterTreeNode)
+{
+    free(letterTreeNode->count);
+    free(letterTreeNode);
+}
+
 int main(void)
 {
     printf("Hello, World!\n");
