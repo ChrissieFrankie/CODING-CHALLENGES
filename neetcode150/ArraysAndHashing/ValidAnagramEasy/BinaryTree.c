@@ -38,7 +38,6 @@ void freeLetterTreeNode(LetterTreeNode *letterTreeNode) // Free the memory alloc
         freeLetterTreeNode(letterTreeNode->right);
         free(letterTreeNode);
     }
-    
 }
 
 void insertLetterTreeNode(LetterTreeNode **root, char newLetter) // Insert a letter tree node even if the root is null
@@ -94,6 +93,21 @@ LetterTreeNode* searchLetterTreeNode(LetterTreeNode* root, char letter)
         return searchLetterTreeNode(root->left, letter);
     }
 }
+
+LetterTreeNode* stringToLetterBinaryTree(char* str) // converts a string to a letter binary tree
+{
+    LetterTreeNode* root = NULL;
+    if (str == NULL || *str == '\0')
+    {
+        return NULL;
+    }
+    while (*str != '\0')
+    {
+        root = insertLetterTreeNode(root, *str);
+        *str++;
+    }
+}
+
 
 int main(void)
 {
