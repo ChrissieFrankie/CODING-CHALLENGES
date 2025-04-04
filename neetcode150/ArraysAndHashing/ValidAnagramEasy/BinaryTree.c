@@ -34,47 +34,47 @@ void freeLetterTreeNode(LetterTreeNode *letterTreeNode) // Free the memory alloc
     free(letterTreeNode);
 }
 
-void insertLetterTreeNode(LetterTreeNode *root, char newLetter) // Insert a letter tree node even if the root is null
+void insertLetterTreeNode(LetterTreeNode **root, char newLetter) // Insert a letter tree node even if the root is null
 {
-    if (root == NULL) // the root is null
+    if (*root == NULL) // the actual root is null
     {
-        fprintf(stderr, "ROOT IS NULL!\n"); // reject it
-        return;
+        *root = createLetterTreeNode(newLetter);
     }
-    if (newLetter < root->letter) // the character is less than the root
+    if (newLetter < (*root)->letter) // the character is less than the actual root
     {
-        if (root->left == NULL) // go to the left
+        if ((*root)->left == NULL) // go to the left
         {
-            root->left = createLetterTreeNode(newLetter);
+            (*root)->left = createLetterTreeNode(newLetter);
         }
         else // keep on looking
         {
-            insertLetterTreeNode(root->left, newLetter);
+            insertLetterTreeNode(&((*root)->left), newLetter);
         }
     }
-    else if (newLetter > root->letter) // the character is greater than the root
+    else if (newLetter > (*root)->letter) // the character is greater than the actual root
     {
-        if (root->right == NULL) // go to the right
+        if ((*root)->right == NULL) // go to the right
         {
-            root->right = createLetterTreeNode(newLetter);
+            (*root)->right = createLetterTreeNode(newLetter);
         }
         else // keep on looking
         {
-            insertLetterTreeNode(root->right, newLetter);
+            insertLetterTreeNode(&((*root)->right), newLetter);
         }
     }
     else
     {
-        root->count->value++; // the character is the same as the root's character / increment count of letter in tree
+        (*root)->count->value++; // the character is the same as the root's character / increment count of letter in tree
     }
 }
 
 int main(void)
 {
     printf("Hello, World!\n");
-    LetterTreeNode *a = createLetterTreeNode('a');
-    printf("Letter: %c\n", a->letter);
-    printf("Count: %d\n", a->count->value);
-    freeLetterTreeNode(a);
+    LetterTreeNode *root = NULL;
+    insertLetterTreeNode(&root, 'a');
+    printf("Letter: %c\n", root->letter);
+    printf("Count: %d\n", root->count->value);
+    freeLetterTreeNode(root);
     return 0;
 }
