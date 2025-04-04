@@ -108,6 +108,16 @@ LetterTreeNode* stringToLetterBinaryTree(char* str) // converts a string to a le
     }
 }
 
+Count* searchLetterCount(LetterTreeNode* root, char letter)
+{
+    if (root == NULL) // if the root is null return a count of 0
+    {
+        return NULL;
+    }
+    LetterTreeNode* target = searchLetterTreeNode(root, letter);
+    return target ? target->count : NULL; // may not find the letter
+}
+
 
 int main(void)
 {
