@@ -31,8 +31,14 @@ LetterTreeNode *createLetterTreeNode(char letter) // Create a letter tree node g
 
 void freeLetterTreeNode(LetterTreeNode *letterTreeNode) // Free the memory allocated for a letter tree node
 {
-    free(letterTreeNode->count);
-    free(letterTreeNode);
+    if (letterTreeNode != NULL)
+    {
+        free(letterTreeNode->count);
+        freeLetterTreeNode(letterTreeNode->left);
+        freeLetterTreeNode(letterTreeNode->right);
+        free(letterTreeNode);
+    }
+    
 }
 
 void insertLetterTreeNode(LetterTreeNode **root, char newLetter) // Insert a letter tree node even if the root is null
