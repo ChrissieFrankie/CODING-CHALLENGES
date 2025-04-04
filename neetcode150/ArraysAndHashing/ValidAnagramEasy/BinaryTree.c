@@ -69,6 +69,26 @@ void insertLetterTreeNode(LetterTreeNode **root, char newLetter) // Insert a let
     }
 }
 
+LetterTreeNode* searchLetterTreeNode(LetterTreeNode* root, char letter)
+{
+    if (root == NULL) // the root is null to begin with, what's the point
+    {
+        return NULL;
+    }
+    else if (root->letter == letter) // the root is the target
+    {
+        return root;
+    }
+    else if (root->letter < letter) // the target's letter comes after the root's letter
+    {
+        return searchLetterTreeNode(root->right, letter);
+    }
+    else if (root->letter > letter) // the target's letter comes before the root's letter
+    {
+        return searchLetterTreeNode(root->left, letter);
+    }
+}
+
 int main(void)
 {
     printf("Hello, World!\n");
