@@ -2,12 +2,13 @@
 #include <stdlib.h>
 
 typedef struct Count Count;
-typedef struct LetterTreeNode LetterTreeNode;
 
 typedef struct Count // Create a bitfiled to store the frequency of a letter in a word
 {
     unsigned int value : 4;
 } Count;
+
+typedef struct LetterTreeNode LetterTreeNode;
 
 typedef struct LetterTreeNode // Create a node to store the info of a word's letter
 {
@@ -40,7 +41,7 @@ void insertLetterTreeNode(LetterTreeNode **root, char newLetter) // Insert a let
     {
         *root = createLetterTreeNode(newLetter);
     }
-    if (newLetter < (*root)->letter) // the character is less than the actual root
+    else if (newLetter < (*root)->letter) // the character is less than the actual root
     {
         if ((*root)->left == NULL) // go to the left
         {
