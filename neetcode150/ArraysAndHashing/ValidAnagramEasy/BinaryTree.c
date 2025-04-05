@@ -172,11 +172,13 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode *root, char letter)
     }
     else if (root->letter > letter) // look to the right
     {
-        return deleteLetterTreeNode(root->right, letter);
+        root->right = deleteLetterTreeNode(root->right, letter); // updates the right subtree with modified subtree without the target node
+        return root;
     }
     else if (root->letter < letter) // look to the left
     {
-        return deleteLetterTreeNode(root->left, letter);
+        root->left = deleteLetterTreeNode(root->left, letter); // updates the left subtree with modified subtree without the target node
+        return root;
     }
 }
 
