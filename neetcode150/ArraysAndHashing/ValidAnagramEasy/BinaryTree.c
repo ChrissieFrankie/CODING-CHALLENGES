@@ -118,6 +118,22 @@ Count* searchLetterCount(LetterTreeNode* root, char letter)
     return target ? target->count : NULL; // may not find the letter
 }
 
+LetterTreeNode* findMinimumLetterTreeNode(LetterTreeNode* root) // finds the smallest node in a tree
+{
+    if (root == NULL) // the root is null
+    {
+        return NULL;
+    }
+    else if (root->left)
+    {
+        return findMinimumLetterTreeNode(root->left)
+    }
+    else
+    {
+        return root;
+    }
+}
+
 LetterTreeNode* deleteLetterTreeNode(LetterTreeNode* root, char letter)
 {
     if (root == NULL) // if the user tries to bluff
