@@ -182,6 +182,17 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode *root, char letter)
     }
 }
 
+void printTreeInOrder(LetterTreeNode* root) // print the letter tree node characters in order
+{
+    if (root == NULL) // if null node return
+    {
+        return;
+    }
+    printTreeInOrder(root->left);
+    printf("%c ", root->letter);
+    printTreeInOrder(root->right);
+}
+
 int main(void)
 {
     printf("Hello, World!\n");
