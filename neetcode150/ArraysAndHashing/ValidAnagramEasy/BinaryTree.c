@@ -118,6 +118,49 @@ Count* searchLetterCount(LetterTreeNode* root, char letter)
     return target ? target->count : NULL; // may not find the letter
 }
 
+LetterTreeNode* deleteLetterTreeNode(LetterTreeNode* root, char letter)
+{
+    if (root == NULL) // if the user tries to bluff
+    {
+        return NULL;
+    }
+    else if (root->letter == letter) // root that matches
+    {
+        if (root->left == NULL && root->right == NULL) // no children to worry about
+        {
+            LetterTreeNode* temp = root;
+            root = NULL;
+            return temp;
+        }
+        else if (root->left == NULL) // the right child to worry about
+        {
+            LetterTreeNode* target = root;
+            root = root->right;
+            target->right = NULL;
+            return target;
+        }
+        else if (root->right == NULL) // the left child to worry about 
+        {
+            LetterTreeNode* target = root;
+            root = root->left;
+            target->left = NULL;
+            return target;
+        }
+        else // two children to worry about
+        {
+            return NULL; // relearning
+        }
+    }
+    else if (root->letter > letter) // look to the right
+    {
+        return deleteLetterTreeNode(root->right, letter);
+    }
+    else if (root->letter < letter) // look to the left
+    {
+        return deleteLetterTreeNode(root->left, letter);
+    }
+}
+
 
 int main(void)
 {
