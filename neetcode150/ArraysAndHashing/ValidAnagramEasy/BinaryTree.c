@@ -74,7 +74,7 @@ void insertLetterTreeNode(LetterTreeNode **root, char newLetter) // Insert a let
     }
 }
 
-LetterTreeNode* searchLetterTreeNode(LetterTreeNode* root, char letter)
+LetterTreeNode *searchLetterTreeNode(LetterTreeNode *root, char letter)
 {
     if (root == NULL) // the root is null to begin with, what's the point
     {
@@ -94,9 +94,9 @@ LetterTreeNode* searchLetterTreeNode(LetterTreeNode* root, char letter)
     }
 }
 
-LetterTreeNode* stringToLetterBinaryTree(char* str) // converts a string to a letter binary tree
+LetterTreeNode *stringToLetterBinaryTree(char *str) // converts a string to a letter binary tree
 {
-    LetterTreeNode* root = NULL;
+    LetterTreeNode *root = NULL;
     if (str == NULL || *str == '\0') // check for empty/null string
     {
         return NULL;
@@ -104,21 +104,21 @@ LetterTreeNode* stringToLetterBinaryTree(char* str) // converts a string to a le
     while (*str != '\0') // continue until no characters
     {
         root = insertLetterTreeNode(root, *str); // insert every character into the letter binary tree
-        *str++; // next character
+        *str++;                                  // next character
     }
 }
 
-Count* searchLetterCount(LetterTreeNode* root, char letter)
+Count *searchLetterCount(LetterTreeNode *root, char letter)
 {
     if (root == NULL) // if the root is null return a count of 0
     {
         return NULL;
     }
-    LetterTreeNode* target = searchLetterTreeNode(root, letter);
+    LetterTreeNode *target = searchLetterTreeNode(root, letter);
     return target ? target->count : NULL; // may not find the letter
 }
 
-LetterTreeNode* findMinimumLetterTreeNode(LetterTreeNode* root) // finds the smallest node in a tree
+LetterTreeNode *findMinimumLetterTreeNode(LetterTreeNode *root) // finds the smallest node in a tree
 {
     if (root == NULL) // the root is null
     {
@@ -134,7 +134,7 @@ LetterTreeNode* findMinimumLetterTreeNode(LetterTreeNode* root) // finds the sma
     }
 }
 
-LetterTreeNode* deleteLetterTreeNode(LetterTreeNode* root, char letter)
+LetterTreeNode *deleteLetterTreeNode(LetterTreeNode *root, char letter)
 {
     if (root == NULL) // if the user tries to bluff
     {
@@ -144,27 +144,30 @@ LetterTreeNode* deleteLetterTreeNode(LetterTreeNode* root, char letter)
     {
         if (root->left == NULL && root->right == NULL) // no children to worry about
         {
-            LetterTreeNode* temp = root;
+            LetterTreeNode *temp = root;
             root = NULL;
             return temp;
         }
         else if (root->left == NULL) // the right child to worry about
         {
-            LetterTreeNode* target = root;
+            LetterTreeNode *target = root;
             root = root->right;
             target->right = NULL;
             return target;
         }
-        else if (root->right == NULL) // the left child to worry about 
+        else if (root->right == NULL) // the left child to worry about
         {
-            LetterTreeNode* target = root;
+            LetterTreeNode *target = root;
             root = root->left;
             target->left = NULL;
             return target;
         }
         else // two children to worry about
         {
-            return NULL; // relearning
+            LetterTreeNode *successorNode = findMinimumLetterTreeNode(root->right); // we get the successor
+            root->letter = successorNode->letter;                                   // just copy the letter / value
+            root->right = deleteLetterTreeNode(root->right, successorNode->letter); // set the root to the modified subtree
+            return root;                                                            // relearning
         }
     }
     else if (root->letter > letter) // look to the right
@@ -176,7 +179,6 @@ LetterTreeNode* deleteLetterTreeNode(LetterTreeNode* root, char letter)
         return deleteLetterTreeNode(root->left, letter);
     }
 }
-
 
 int main(void)
 {
