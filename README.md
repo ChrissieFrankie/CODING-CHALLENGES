@@ -1,4 +1,4 @@
-# CODING-CHALLENGES :computer::dart:
+# CODING CHALLENGES :computer::dart:
 
 ## Brief overview :memo:
 
