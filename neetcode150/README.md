@@ -10,3 +10,4 @@ A problem set created by Navdeep Singh
 - [Group Anagrams](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/GroupAnagramsMedium) Medium
 - [Top K Frequent Elements](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TopKFrequentElementsMedium) Medium
 - [Encode and Decode Strings](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/EncodeAndDecodeStringsMedium) Medium
+- [Products of Array Except Self](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ProductsOfArrayExceptSelfMedium) Medium
