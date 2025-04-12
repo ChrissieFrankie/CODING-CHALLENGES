@@ -6,3 +6,11 @@ class Solution:
         return repr(strs)
     def decodeOne(self, s: str) -> List[str]:
         return literal_eval(s)
+    
+    def encodeTwo(self, strs: List[str]) -> str: """I'll come up with something that uses
+                                                    some fancy math because this problem 
+                                                    is boring not useful to visualise
+                                                 """
+        pass
+    def decodeTwo(self, s: str) -> List[str]:
+        pass
