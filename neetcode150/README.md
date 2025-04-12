@@ -9,3 +9,4 @@ A problem set created by Navdeep Singh
 - [Two Sum](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TwoSumEasy) Easy
 - [Group Anagrams](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/GroupAnagramsMedium) Medium
 - [Top K Frequent Elements](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TopKFrequentElementsMedium) Medium
+- [Encode and Decode Strings](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/EncodeAndDecodeStringsMedium) Medium
