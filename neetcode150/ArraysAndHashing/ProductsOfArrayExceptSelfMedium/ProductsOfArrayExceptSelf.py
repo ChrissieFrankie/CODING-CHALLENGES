@@ -1,6 +1,6 @@
 class Solution:
 
-    def productExceptSelfOne(self, nums: List[int]) -> List[int]: # brute force attempt
+    def productExceptSelfOne(self, nums: List[int]) -> List[int]: # brute force solution
         def product(nums, indices):
             product = nums[indices[0]] # start result as first num
             for i in indices[1:]: # iterate through rest of nums
