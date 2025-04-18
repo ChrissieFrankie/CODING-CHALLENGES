@@ -12,7 +12,7 @@ A problem set created by Navdeep Singh
 - [x] [Encode and Decode Strings](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/EncodeAndDecodeStringsMedium) Medium
 - [x] [Products of Array Except Self](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ProductsOfArrayExceptSelfMedium) Medium
 - [ ] [Valid Sudoku](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidSudokuMedium) Medium
-- [ ] [Longest Consecutive Sequence]
+- [ ] [Longest Consecutive Sequence](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/LongestConsecutiveSequenceMedium) Medium
 
 ## Two Pointers
 
