@@ -16,6 +16,8 @@ A problem set created by Navdeep Singh
 
 ## Two Pointers
 
+- [x] [Valid Palindrome](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidPalindromeEasy) Easy
+
 ## Sliding Window
 
 ## Stack
