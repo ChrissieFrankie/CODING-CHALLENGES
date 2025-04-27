@@ -18,7 +18,10 @@ A problem set created by Navdeep Singh
 
 ## Two Pointers
 
-- [x] [Valid Palindrome](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/TwoPointers/ValidPalindromeEasy) Easy
+|Problem|Difficulty|Language(s)|
+|-------|----------|-----------|
+|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/TwoPointers/ValidPalindromeEasy/python)|
+
 
 ## Sliding Window
 
