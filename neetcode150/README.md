@@ -6,9 +6,10 @@ A problem set created by Navdeep Singh
 
 |Problem|Difficulty|Language(s)|
 |-------|----------|-----------|
-|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/python)[C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/c)|
+|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/python) [C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/c)|
+|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/python)|
 
-- [x] [Contains Duplicate](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy) Easy
+
 - [x] [Valid Anagram](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy) Easy
 - [x] [Two Sum](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TwoSumEasy) Easy
 - [x] [Group Anagrams](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/GroupAnagramsMedium) Medium
