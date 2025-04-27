@@ -9,8 +9,6 @@ A problem set created by Navdeep Singh
 |[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/python) [C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/c)|
 |[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/python)|
 
-
-- [x] [Valid Anagram](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy) Easy
 - [x] [Two Sum](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TwoSumEasy) Easy
 - [x] [Group Anagrams](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/GroupAnagramsMedium) Medium
 - [x] [Top K Frequent Elements](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TopKFrequentElementsMedium) Medium
