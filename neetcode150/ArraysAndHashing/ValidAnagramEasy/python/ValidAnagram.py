@@ -12,11 +12,21 @@ class Solution:
                 return False
         return len(t_list) == 0 # none remaining anagram
     
-    def isAnagramTwo(self, s: str, t: str) -> bool: # slick force attempt
-        # create two avl trees / two red-black trees
-        # use one tree as a tracker
-        # once that tracker tree is empty we can say its an anagram
-        # review how to write an avl tree / red black tree from scratch its been half a decade
-        pass
-
-        
+    def isAnagramTwo(self, s: str, t: str) -> bool: # why allocate more memory for additional lists
+        if len(s) != len(t): # not the same size, not anagram
+            return False
+        track = {} # track the characters
+        for c in s: # populate the track
+            if c in track:
+                track[c] += 1
+            else:
+                track[c] = 1
+        for c in t: # depopulate the track
+            if c in track:
+                count = track[c]
+                if count < 1:
+                    return False
+                else:
+                    track[c] -= 1        
+        vals = [val for val in track.values() if val > 0] # save excess
+        return (len(vals) == 0) # is clear of excess, is anagram
