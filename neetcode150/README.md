@@ -21,7 +21,7 @@ A problem set created by Navdeep Singh
 |Problem|Difficulty|Language(s)|
 |-------|----------|-----------|
 |[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/TwoPointers/ValidPalindromeEasy/python)|
-
+|[Two Sum II Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TwoSum2InputArrayIsSortedMedium/python)|
 
 ## Sliding Window
 
