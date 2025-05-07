@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class Solution:
     def isAnagramOne(self, s: str, t: str) -> bool: # brute force attempt
         if len(s) != len(t): # no the same size, not anagram
@@ -30,3 +32,13 @@ class Solution:
                     track[c] -= 1        
         vals = [val for val in track.values() if val > 0] # save excess
         return (len(vals) == 0) # is clear of excess, is anagram
+
+    def isAnagramThree(self, s: str, t: str) -> bool: # why not have a dict with default values of 0
+        if len(s) != len(t): # not the same size, not an anagram
+            return False
+        track = defaultdict(int) # dict that defaults to 0
+        for c in s:
+            track[c] += 1 # increment right away
+        for c in t:
+            track[c] -= 1 # decrement right away       
+        return all(val == 0 for val in track.values()) # all values are 0
