@@ -134,58 +134,58 @@ LetterTreeNode *findMinimumLetterTreeNode(LetterTreeNode *root) // finds the sma
     }
 }
 
-LetterTreeNode *deleteLetterTreeNode(LetterTreeNode *root, char letter)
+LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
 {
-    if (root == NULL) // if the user tries to bluff
+    if (*root == NULL) // if the user tries to bluff
     {
         return NULL;
     }
-    else if (root->letter == letter) // root that matches
+    else if ((*root)->letter == letter) // root that matches
     {
-        if (root->left == NULL && root->right == NULL) // no children to worry about
+        if ((*root)->left == NULL && (*root)->right == NULL) // no children to worry about
         {
-            LetterTreeNode *temp = root;
-            root = NULL;
+            LetterTreeNode *temp = *root;
+            *root = NULL;
             return temp;
         }
-        else if (root->left == NULL) // the right child to worry about
+        else if ((*root)->left == NULL) // the right child to worry about
         {
-            LetterTreeNode *target = root;
-            root = root->right;
-            target->right = NULL;
-            return target;
+            LetterTreeNode *temp = *root; // save the target to return
+            *root = (*root)->right;
+            temp->right = NULL;
+            return temp;
         }
-        else if (root->right == NULL) // the left child to worry about
+        else if ((*root)->right == NULL) // the left child to worry about
         {
-            LetterTreeNode *target = root;
-            root = root->left;
-            target->left = NULL;
-            return target;
+            LetterTreeNode *temp = *root; // save the target to return
+            *root = (*root)->left;
+            temp->left = NULL;
+            return temp;
         }
         else // two children to worry about
         {
-            LetterTreeNode *successorNode = findMinimumLetterTreeNode(root->right); // we get the successor
+            LetterTreeNode *successorNode = findMinimumLetterTreeNode((*root)->right); // we get the successor
             if (successorNode)
             {
-                root->letter = successorNode->letter;                                   // just copy the letter / value
-                root->right = deleteLetterTreeNode(root->right, successorNode->letter); // set the root to the modified subtree
+                (*root)->letter = successorNode->letter;                                   // just copy the letter / value
+                (*root)->right = deleteLetterTreeNode((*root)->right, successorNode->letter); // set the root to the modified subtree
             }
-            return root; // relearning
+            return *root; // relearning, might change this else again
         }
     }
-    else if (root->letter < letter) // look to the right
+    else if ((*root)->letter < letter) // look to the right
     {
-        root->right = deleteLetterTreeNode(root->right, letter); // updates the right subtree with modified subtree without the target node
-        return root;
+        (*root)->right = deleteLetterTreeNode(&((*root)->right), letter); // updates the right subtree with modified subtree without the target node
+        return *root;
     }
     else // look to the left
     {
-        root->left = deleteLetterTreeNode(root->left, letter); // updates the left subtree with modified subtree without the target node
-        return root;
+        (*root)->left = deleteLetterTreeNode(&((*root)->left), letter); // updates the left subtree with modified subtree without the target node
+        return *root;
     }
 }
 
-void printTreeInOrder(LetterTreeNode *root) // print the letter tree node characters in order
+void printTreeInOrder(LetterTreeNode* root) // print the letter tree node characters in order
 {
     if (root == NULL) // if null node return
     {
