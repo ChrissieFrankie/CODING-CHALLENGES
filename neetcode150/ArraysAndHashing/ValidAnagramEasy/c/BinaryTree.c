@@ -205,7 +205,7 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
                 if (successorNode)                                                         // the successor/child is still around
                 {
                     (*root)->letter = successorNode->letter;                                       // just copy the letter
-                    (*root)->value = successorNode->value;                                         // just copy the value
+                    (*root)->count = successorNode->count;                                         // just copy the value
                     (*root)->right = deleteLetterTreeNode(&(*root)->right, successorNode->letter); // set the root to the modified subtree (without successor)
                 } // what if the successorNode doesn't exist? **** ^-^ ******
                 return *root; // relearning, will change this again
@@ -239,19 +239,19 @@ int main(void)
 {
     printf("Hello, World!\n");
     LetterTreeNode *root = NULL;
-    // insertLetterTreeNode(&root, 'e');
-    // insertLetterTreeNode(&root, 'a');
-    // insertLetterTreeNode(&root, 'b');
-    // insertLetterTreeNode(&root, 'c');
-    // insertLetterTreeNode(&root, 'd');
-    // insertLetterTreeNode(&root, 'f');
-    // insertLetterTreeNode(&root, 'g');
-    // insertLetterTreeNode(&root, 'h');
-    // insertLetterTreeNode(&root, 'i');
-    // printTreeInOrder(root);
-    // printf("\n");
-    // deleteLetterTreeNode(&root, 'e');
-    // printTreeInOrder(root);
+    insertLetterTreeNode(&root, 'e');
+    insertLetterTreeNode(&root, 'a');
+    insertLetterTreeNode(&root, 'b');
+    insertLetterTreeNode(&root, 'c');
+    insertLetterTreeNode(&root, 'd');
+    insertLetterTreeNode(&root, 'f');
+    insertLetterTreeNode(&root, 'g');
+    insertLetterTreeNode(&root, 'h');
+    insertLetterTreeNode(&root, 'i');
+    printTreeInOrder(root);
+    printf("\n");
+    deleteLetterTreeNode(&root, 'e');
+    printTreeInOrder(root);
     freeLetterTreeNode(root);
     return 0;
 }
