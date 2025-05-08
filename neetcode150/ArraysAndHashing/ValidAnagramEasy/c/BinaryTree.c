@@ -165,24 +165,27 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode *root, char letter)
         else // two children to worry about
         {
             LetterTreeNode *successorNode = findMinimumLetterTreeNode(root->right); // we get the successor
-            root->letter = successorNode->letter;                                   // just copy the letter / value
-            root->right = deleteLetterTreeNode(root->right, successorNode->letter); // set the root to the modified subtree
-            return root;                                                            // relearning
+            if (successorNode)
+            {
+                root->letter = successorNode->letter;                                   // just copy the letter / value
+                root->right = deleteLetterTreeNode(root->right, successorNode->letter); // set the root to the modified subtree
+            }
+            return root; // relearning
         }
     }
-    else if (root->letter > letter) // look to the right
+    else if (root->letter < letter) // look to the right
     {
         root->right = deleteLetterTreeNode(root->right, letter); // updates the right subtree with modified subtree without the target node
         return root;
     }
-    else if (root->letter < letter) // look to the left
+    else // look to the left
     {
         root->left = deleteLetterTreeNode(root->left, letter); // updates the left subtree with modified subtree without the target node
         return root;
     }
 }
 
-void printTreeInOrder(LetterTreeNode* root) // print the letter tree node characters in order
+void printTreeInOrder(LetterTreeNode *root) // print the letter tree node characters in order
 {
     if (root == NULL) // if null node return
     {
