@@ -144,26 +144,36 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
     {
         if ((*root)->left == NULL && (*root)->right == NULL) // no children to worry about
         {
-            Count* rootCount = (*root)->count;
-            if (rootCount->value > 1)
+            Count* rootCount = (*root)->count; // save the count of the root
+            if (rootCount->value > 1) // needs more than 1 deletion to remove
             {
-                rootCount->value -= 1;
-                return *root;
+                rootCount->value -= 1; // decrement value/count
+                return *root; // return same root/node
             }
-            else
+            else // just needs one deletion to remove
             {
-                freeLetterTreeNode(*root);
-                *root = NULL;
+                freeLetterTreeNode(*root); // game over for root/node
+                *root = NULL; // safety first
                 return NULL;
             }
             
         }
         else if ((*root)->left == NULL) // the right child to worry about
         {
-            LetterTreeNode *temp = *root; // save the target to return
-            *root = (*root)->right;
-            temp->right = NULL;
-            return temp;
+            Count* rootCount = (*root)->count; // save the count of the root
+            if (rootCount->value > 1) // needs more than 1 deletion to remove
+            {
+                rootCount->value -= 1; // decrement value / count
+                return *root; // return same root/node
+            }
+            else // just needs one deletion to remove
+            {
+                LetterTreeNode *temp = *root; // save the right pointer somewhere
+                *root = (*root)->right; // replace root with right pointer
+                temp->right = NULL; // prevent recursive freeing of right child
+                freeLetterTreeNode(temp); // free useless memory
+                return *root; // return new root
+            }
         }
         else if ((*root)->right == NULL) // the left child to worry about
         {
@@ -210,9 +220,12 @@ int main(void)
 {
     printf("Hello, World!\n");
     LetterTreeNode *root = NULL;
-    insertLetterTreeNode(&root, 'b');
-    insertLetterTreeNode(&root, 'a');
-    insertLetterTreeNode(&root, 'a');
+    insertLetterTreeNode(&root, 'd');
+    insertLetterTreeNode(&root, 'f');
+    insertLetterTreeNode(&root, 'e');
+    printTreeInOrder(root);
+    deleteLetterTreeNode(&root, 'f');
+    printf("\n");
     printTreeInOrder(root);
     freeLetterTreeNode(root);
     return 0;
