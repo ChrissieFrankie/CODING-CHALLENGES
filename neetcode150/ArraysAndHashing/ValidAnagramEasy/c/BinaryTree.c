@@ -168,7 +168,7 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
             }
             else // just needs one deletion to remove
             {
-                LetterTreeNode *temp = *root; // save the right pointer somewhere
+                LetterTreeNode *temp = *root; // save the target's pointer somewhere
                 *root = (*root)->right; // replace root with right pointer
                 temp->right = NULL; // prevent recursive freeing of right child
                 freeLetterTreeNode(temp); // free useless memory
@@ -177,10 +177,20 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
         }
         else if ((*root)->right == NULL) // the left child to worry about
         {
-            LetterTreeNode *temp = *root; // save the target to return
-            *root = (*root)->left;
-            temp->left = NULL;
-            return temp;
+            Count* rootCount = (*root)->count; // needs more than 1 deletion to remove
+            if (rootCount->value > 1)
+            {
+                rootCount->value -= 1; // decrement value / count
+                return *root; // return same root/node
+            }
+            else // just needs one deletion to remove
+            {
+                LetterTreeNode *temp = *root; // save the target's pointer somewhere
+                *root = (*root)->left; // replace root with left pointer
+                temp->left = NULL; // prevent recursive freeing of right child
+                freeLetterTreeNode(temp); // free useless memory
+                return *root; // return new root
+            }
         }
         else // two children to worry about
         {
