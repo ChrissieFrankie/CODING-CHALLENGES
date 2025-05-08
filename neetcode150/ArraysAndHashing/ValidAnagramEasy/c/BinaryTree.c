@@ -235,6 +235,15 @@ void printTreeInOrder(LetterTreeNode *root) // print the letter tree node charac
     printTreeInOrder(root->right);
 }
 
+int countTree(LetterTreeNode *root)
+{
+    if (root == NULL) // a dud was sent
+    {
+        return 0; // duds get nothin'
+    }
+    return (countTree(root->left) + 1 + countTree(root->right)); // count from the left + mark root + count from the right
+}
+
 int main(void)
 {
     printf("Hello, World!\n");
@@ -249,9 +258,11 @@ int main(void)
     insertLetterTreeNode(&root, 'h');
     insertLetterTreeNode(&root, 'i');
     printTreeInOrder(root);
+    printf("Count: %d\n", countTree(root));
     printf("\n");
     deleteLetterTreeNode(&root, 'e');
     printTreeInOrder(root);
+    printf("Count: %d\n", countTree(root));
     freeLetterTreeNode(root);
     return 0;
 }
