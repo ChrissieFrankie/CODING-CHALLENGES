@@ -124,11 +124,11 @@ LetterTreeNode *findMinimumLetterTreeNode(LetterTreeNode *root) // finds the sma
     {
         return NULL;
     }
-    else if (root->left)
+    else if (root->left) // keep digging
     {
         return findMinimumLetterTreeNode(root->left);
     }
-    else
+    else // we struck gold
     {
         return root;
     }
@@ -144,9 +144,19 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
     {
         if ((*root)->left == NULL && (*root)->right == NULL) // no children to worry about
         {
-            LetterTreeNode *temp = *root;
-            *root = NULL;
-            return temp;
+            Count* rootCount = (*root)->count;
+            if (rootCount->value > 1)
+            {
+                rootCount->value -= 1;
+                return *root;
+            }
+            else
+            {
+                freeLetterTreeNode(*root);
+                *root = NULL;
+                return NULL;
+            }
+            
         }
         else if ((*root)->left == NULL) // the right child to worry about
         {
@@ -167,8 +177,8 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
             LetterTreeNode *successorNode = findMinimumLetterTreeNode((*root)->right); // we get the successor
             if (successorNode)
             {
-                (*root)->letter = successorNode->letter;                                   // just copy the letter / value
-                (*root)->right = deleteLetterTreeNode((*root)->right, successorNode->letter); // set the root to the modified subtree
+                (*root)->letter = successorNode->letter;                                       // just copy the letter / value
+                (*root)->right = deleteLetterTreeNode(&(*root)->right, successorNode->letter); // set the root to the modified subtree
             }
             return *root; // relearning, might change this else again
         }
@@ -185,7 +195,7 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
     }
 }
 
-void printTreeInOrder(LetterTreeNode* root) // print the letter tree node characters in order
+void printTreeInOrder(LetterTreeNode *root) // print the letter tree node characters in order
 {
     if (root == NULL) // if null node return
     {
@@ -200,9 +210,10 @@ int main(void)
 {
     printf("Hello, World!\n");
     LetterTreeNode *root = NULL;
+    insertLetterTreeNode(&root, 'b');
     insertLetterTreeNode(&root, 'a');
-    printf("Letter: %c\n", root->letter);
-    printf("Count: %d\n", root->count->value);
+    insertLetterTreeNode(&root, 'a');
+    printTreeInOrder(root);
     freeLetterTreeNode(root);
     return 0;
 }
