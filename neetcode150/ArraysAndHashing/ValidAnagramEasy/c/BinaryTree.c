@@ -144,63 +144,72 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
     {
         if ((*root)->left == NULL && (*root)->right == NULL) // no children to worry about
         {
-            Count* rootCount = (*root)->count; // save the count of the root
-            if (rootCount->value > 1) // needs more than 1 deletion to remove
+            Count *rootCount = (*root)->count; // save the count of the root
+            if (rootCount->value > 1)          // needs more than 1 deletion to remove
             {
                 rootCount->value -= 1; // decrement value/count
-                return *root; // return same root/node
+                return *root;          // return same root/node
             }
             else // just needs one deletion to remove
             {
                 freeLetterTreeNode(*root); // game over for root/node
-                *root = NULL; // safety first
+                *root = NULL;              // safety first
                 return NULL;
             }
-            
         }
         else if ((*root)->left == NULL) // the right child to worry about
         {
-            Count* rootCount = (*root)->count; // save the count of the root
-            if (rootCount->value > 1) // needs more than 1 deletion to remove
+            Count *rootCount = (*root)->count; // save the count of the root
+            if (rootCount->value > 1)          // needs more than 1 deletion to remove
             {
                 rootCount->value -= 1; // decrement value / count
-                return *root; // return same root/node
+                return *root;          // return same root/node
             }
             else // just needs one deletion to remove
             {
                 LetterTreeNode *temp = *root; // save the target's pointer somewhere
-                *root = (*root)->right; // replace root with right pointer
-                temp->right = NULL; // prevent recursive freeing of right child
-                freeLetterTreeNode(temp); // free useless memory
-                return *root; // return new root
+                *root = (*root)->right;       // replace root with right pointer
+                temp->right = NULL;           // prevent recursive freeing of right child
+                freeLetterTreeNode(temp);     // free useless memory
+                return *root;                 // return new root
             }
         }
         else if ((*root)->right == NULL) // the left child to worry about
         {
-            Count* rootCount = (*root)->count; // needs more than 1 deletion to remove
+            Count *rootCount = (*root)->count; // needs more than 1 deletion to remove
             if (rootCount->value > 1)
             {
                 rootCount->value -= 1; // decrement value / count
-                return *root; // return same root/node
+                return *root;          // return same root/node
             }
             else // just needs one deletion to remove
             {
                 LetterTreeNode *temp = *root; // save the target's pointer somewhere
-                *root = (*root)->left; // replace root with left pointer
-                temp->left = NULL; // prevent recursive freeing of right child
-                freeLetterTreeNode(temp); // free useless memory
-                return *root; // return new root
+                *root = (*root)->left;        // replace root with left pointer
+                temp->left = NULL;            // prevent recursive freeing of right child
+                freeLetterTreeNode(temp);     // free useless memory
+                return *root;                 // return new root
             }
         }
         else // two children to worry about
         {
-            LetterTreeNode *successorNode = findMinimumLetterTreeNode((*root)->right); // we get the successor
-            if (successorNode)
+            Count *rootCount = (*root)->count; // needs more than 1 deletion to remove
+            if (rootCount->value > 1)
             {
-                (*root)->letter = successorNode->letter;                                       // just copy the letter / value
-                (*root)->right = deleteLetterTreeNode(&(*root)->right, successorNode->letter); // set the root to the modified subtree
+                rootCount->value -= 1; // decrement value / count
+                return *root;          // return some root/node
             }
-            return *root; // relearning, might change this else again
+            else
+            {
+                LetterTreeNode *successorNode = findMinimumLetterTreeNode((*root)->right); // we get the successor of the root
+                if (successorNode)                                                         // the successor/child is still around
+                {
+                    (*root)->letter = successorNode->letter;                                       // just copy the letter
+                    (*root)->value = successorNode->value;                                         // just copy the value
+                    (*root)->right = deleteLetterTreeNode(&(*root)->right, successorNode->letter); // set the root to the modified subtree (without successor)
+                } // what if the successorNode doesn't exist? **** ^-^ ******
+                return *root; // relearning, will change this again
+            }
         }
     }
     else if ((*root)->letter < letter) // look to the right
@@ -230,13 +239,19 @@ int main(void)
 {
     printf("Hello, World!\n");
     LetterTreeNode *root = NULL;
-    insertLetterTreeNode(&root, 'd');
-    insertLetterTreeNode(&root, 'f');
-    insertLetterTreeNode(&root, 'e');
-    printTreeInOrder(root);
-    deleteLetterTreeNode(&root, 'f');
-    printf("\n");
-    printTreeInOrder(root);
+    // insertLetterTreeNode(&root, 'e');
+    // insertLetterTreeNode(&root, 'a');
+    // insertLetterTreeNode(&root, 'b');
+    // insertLetterTreeNode(&root, 'c');
+    // insertLetterTreeNode(&root, 'd');
+    // insertLetterTreeNode(&root, 'f');
+    // insertLetterTreeNode(&root, 'g');
+    // insertLetterTreeNode(&root, 'h');
+    // insertLetterTreeNode(&root, 'i');
+    // printTreeInOrder(root);
+    // printf("\n");
+    // deleteLetterTreeNode(&root, 'e');
+    // printTreeInOrder(root);
     freeLetterTreeNode(root);
     return 0;
 }
