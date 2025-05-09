@@ -3,14 +3,14 @@
 
 typedef struct Count // Create a bitfield to store the letter frequency
 {
-    unsigned int value : 4
+    unsigned int value;
 } Count;
 
 typedef struct LetterTreeNode // Create a node a store the info of a word's letter
 {
     unsigned char letter;
-    LetterTreeNode *left;
-    LetterTreeNode *right;
+    struct LetterTreeNode *left;
+    struct LetterTreeNode *right;
     Count *count;
 } LetterTreeNode;
 
@@ -22,7 +22,6 @@ LetterTreeNode *stringToLetterBinaryTree(char *str);
 Count *searchLetterCount(LetterTreeNode *root, char letter);
 LetterTreeNode *findMinimumLetterTreeNode(LetterTreeNode *root);
 LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter);
-void printTreeInOrder(LetterTreeNode *root);
 int countTree(LetterTreeNode *root);
 
 #endif
