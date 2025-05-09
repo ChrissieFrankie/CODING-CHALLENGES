@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-bool validAnagram(char* s, char* t)
+bool isAnagram(char* s, char* t) // this doesn't pass the last two leetcode testcases
 {
     if (strlen(s) != strlen(t))
         return false;
@@ -24,12 +24,10 @@ bool validAnagram(char* s, char* t)
     return finalLength == 0; // anagram
 }
 
-
-
 int main(void)
 {
     char* s = "anagram";
     char* t = "nagaram";
-    bool result = validAnagram(s, t);
+    bool result = isAnagram(s, t);
     printf("%s\n", result ? "true" : "false");
 }
