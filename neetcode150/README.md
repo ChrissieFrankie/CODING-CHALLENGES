@@ -7,7 +7,7 @@ A problem set created by Navdeep Singh
 |Problem|Difficulty|Language(s)|
 |-------|----------|-----------|
 |[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/python) [C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/c)|
-|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/python)|
+|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/python) [C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/c) - *My C Solution doesn't pass the last two leetcode test cases, if i can't figure it out tomorrow morning, i'll just go with a frequency table*|
 |[Two Sum](https://leetcode.com/problems/two-sum/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TwoSumEasy/python)|
 |[Group Anagrams](https://leetcode.com/problems/group-anagrams/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/GroupAnagramsMedium/python)|
 |[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TopKFrequentElementsMedium/python)|
