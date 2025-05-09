@@ -94,19 +94,20 @@ LetterTreeNode *searchLetterTreeNode(LetterTreeNode *root, char letter)
     }
 }
 
-// LetterTreeNode *stringToLetterBinaryTree(char *str) // converts a string to a letter binary tree
-// {
-//     LetterTreeNode *root = NULL;
-//     if (str == NULL || *str == '\0') // check for empty/null string
-//     {
-//         return NULL;
-//     }
-//     while (*str != '\0') // continue until no characters
-//     {
-//         insertLetterTreeNode(&root, *str); // insert every character into the letter binary tree
-//         *str++;                                  // next character
-//     }
-// }
+LetterTreeNode *stringToLetterBinaryTree(char *str) // converts a string to a letter binary tree
+{
+    LetterTreeNode *root = NULL;
+    if (str == NULL || *str == '\0') // check for empty/null string
+    {
+        return NULL;
+    }
+    while (*str != '\0') // continue until no characters
+    {
+        insertLetterTreeNode(&root, *str); // insert every character into the letter binary tree
+        *str++;                                  // next character
+    }
+    return root;
+}
 
 Count *searchLetterCount(LetterTreeNode *root, char letter)
 {
