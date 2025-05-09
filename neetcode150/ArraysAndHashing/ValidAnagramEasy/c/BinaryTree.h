@@ -18,6 +18,7 @@ LetterTreeNode *createLetterTreeNode(char letter);
 void freeLetterTreeNode(LetterTreeNode *letterTreeNode);
 void insertLetterTreeNode(LetterTreeNode **root, char newLetter);
 LetterTreeNode *searchLetterTreeNode(LetterTreeNode *root, char letter);
+LetterTreeNode *stringToLetterBinaryTree(char *str);
 Count *searchLetterCount(LetterTreeNode *root, char letter);
 LetterTreeNode *findMinimumLetterTreeNode(LetterTreeNode *root);
 LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter);
