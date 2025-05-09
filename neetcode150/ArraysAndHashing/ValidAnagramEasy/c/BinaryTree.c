@@ -206,7 +206,7 @@ LetterTreeNode *deleteLetterTreeNode(LetterTreeNode **root, char letter)
                 if (successorNode)                                                         // the successor/child is still around
                 {
                     (*root)->letter = successorNode->letter;                                       // just copy the letter
-                    (*root)->count = successorNode->count;                                         // just copy the value
+                    (*root)->count->value = successorNode->count->value;                                         // just copy the value
                     (*root)->right = deleteLetterTreeNode(&(*root)->right, successorNode->letter); // set the root to the modified subtree (without successor)
                 } // what if the successorNode doesn't exist? **** ^-^ ******
                 return *root; // relearning, will change this again
@@ -242,7 +242,7 @@ int countTree(LetterTreeNode *root)
     {
         return 0; // duds get nothin'
     }
-    return (countTree(root->left) + 1 + countTree(root->right)); // count from the left + mark root + count from the right
+    return (countTree(root->left) + root->count->value + countTree(root->right)); // count from the left + mark root + count from the right
 }
 
 int main(void)
