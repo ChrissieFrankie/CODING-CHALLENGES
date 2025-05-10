@@ -6,22 +6,26 @@ A problem set created by Navdeep Singh
 
 |Problem|Difficulty|Language(s)|
 |-------|----------|-----------|
-|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/python) [C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ContainsDuplicateEasy/c)|
-|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/python) [C](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidAnagramEasy/c)|
-|[Two Sum](https://leetcode.com/problems/two-sum/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TwoSumEasy/python)|
-|[Group Anagrams](https://leetcode.com/problems/group-anagrams/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/GroupAnagramsMedium/python)|
-|[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/TopKFrequentElementsMedium/python)|
-|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/EncodeAndDecodeStringsMedium/python)|
-|[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ProductsOfArrayExceptSelfMedium/python)|
-|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)|Medium|[~~Python~~](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/ValidSudokuMedium/python)|
-|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/ArraysAndHashing/LongestConsecutiveSequenceMedium/python)|
+|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](./ArraysAndHashing/ContainsDuplicateEasy/python) [C](./ArraysAndHashing/ContainsDuplicateEasy/c)|
+|[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](./ArraysAndHashing/ValidAnagramEasy/python) [C](./ArraysAndHashing/ValidAnagramEasy/c)|
+|[Two Sum](https://leetcode.com/problems/two-sum/)|Easy|[Python](./ArraysAndHashing/TwoSumEasy/python)|
+|[Group Anagrams](https://leetcode.com/problems/group-anagrams/)|Medium|[Python](./ArraysAndHashing/GroupAnagramsMedium/python)|
+|[Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)|Medium|[Python](./ArraysAndHashing/TopKFrequentElementsMedium/python)|
+|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)|Medium|[Python](./ArraysAndHashing/EncodeAndDecodeStringsMedium/python)|
+|[Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)|Medium|[Python](./ArraysAndHashing/ProductsOfArrayExceptSelfMedium/python)|
+|[Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)|Medium|[~~Python~~](./ArraysAndHashing/ValidSudokuMedium/python)|
+|[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)|Medium|[Python](./ArraysAndHashing/LongestConsecutiveSequenceMedium/python)|
 
 ## Two Pointers
 
 |Problem|Difficulty|Language(s)|
 |-------|----------|-----------|
-|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|Easy|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/TwoPointers/ValidPalindromeEasy/python)|
-|[Two Sum II Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Medium|[Python](https://github.com/CHRISSY-FRANKY/CODING-CHALLENGES/tree/main/neetcode150/TwoPointers/TwoSum2InputArrayIsSortedMedium/python)|
+|[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|Easy|[Python](./TwoPointers/ValidPalindromeEasy/python)|
+|[Two Sum II Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Medium|[Python](./TwoPointers/TwoSum2InputArrayIsSortedMedium/python)|
+|[3Sum](https://leetcode.com/problems/3sum/) | Medium | Python (Work in progress) |
+|[Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Medium | Python (Wosrk in progress) |
+|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | Python (Work in progress) |
+
 
 ## Sliding Window
 
