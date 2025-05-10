@@ -82,7 +82,7 @@ A problem set created by Navdeep Singh
 | Problem | Difficulty | Language(s) |
 |---------|------------|-------------|
 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | Easy | Python (Work in progress) |
-| [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Easy | Python (Work in progress) |
+| [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Easy | [Python](./Trees/MaximumDepthOfBinaryTreeEasy/python) |
 | [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/) | Easy | Python (Work in progress) |
 | [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/) | Easy | Python (Work in progress) |
 | [Same Tree](https://leetcode.com/problems/same-tree/) | Easy | Python (Work in progress) |
