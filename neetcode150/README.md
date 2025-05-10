@@ -234,7 +234,7 @@ A problem set created by Navdeep Singh
 
 | Problem | Difficulty | Language(s) |
 |---------|------------|-------------|
-| [Single Number](https://leetcode.com/problems/single-number/) | Easy | Python (Work in progress) |
+| [Single Number](https://leetcode.com/problems/single-number/) | Easy |[Python](./BitManipulation/SingleNumberEasy/python) |
 | [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) | Easy | Python (Work in progress) |
 | [Counting Bits](https://leetcode.com/problems/counting-bits/) | Medium | Python (Work in progress) |
 | [Reverse Bits](https://leetcode.com/problems/reverse-bits/) | Easy | Python (Work in progress) |
