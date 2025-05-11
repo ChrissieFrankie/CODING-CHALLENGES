@@ -17,7 +17,7 @@ The college experience has fried the engine mentioned above.
 
 ## Sources :book:
 
-- [NeetCode](https://neetcode.io/) at the moment. 
+- [NeetCode](https://neetcode.io/) at the moment.
 - [LintCode](https://www.lintcode.com/), afterwards.
 - HackerRank, afterwards.
 - CodeForces for sure eventually.
