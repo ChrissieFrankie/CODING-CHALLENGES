@@ -6,7 +6,7 @@ The current repository you're exploring is a collection of coding challenges and
 
 ## Context :chart_with_upwards_trend:
 
-The college experience has fried the engine mentioned above.
+The college experience has turned down the neurons mentioned above.
 
 ## Scope :telescope:
 
