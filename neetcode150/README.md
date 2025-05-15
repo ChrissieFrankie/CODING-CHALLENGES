@@ -31,7 +31,7 @@ A problem set created by Navdeep Singh
 
 | Problem | Difficulty | Language(s) |
 |---------|------------|-------------|
-| [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | Python (Work in progress) |
+| [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | [Python](./SlidingWindow/BestTimeToBuyAndSellStockEasy/python/) |
 | [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | Python (Work in progress) |
 | [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) | Medium | Python (Work in progress) |
 | [Permutation in String](https://leetcode.com/problems/permutation-in-string/) | Medium | Python (Work in progress) |
