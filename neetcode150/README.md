@@ -224,7 +224,7 @@ A problem set created by Navdeep Singh
 | [Rotate Image](https://leetcode.com/problems/rotate-image/) | Medium | Python (Work in progress) |
 | [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/) | Medium | Python (Work in progress) |
 | [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) | Medium | Python (Work in progress) |
-| [Happy Number](https://leetcode.com/problems/happy-number/) | Easy | Python (Work in progress) |
+| [Happy Number](https://leetcode.com/problems/happy-number/) | Easy | [Python](./MathAndGeometry/HappyNumberEasy/python/) |
 | [Plus One](https://leetcode.com/problems/plus-one/) | Easy | Python (Work in progress) |
 | [Pow(x, n)](https://leetcode.com/problems/powx-n/) | Medium | Python (Work in progress) |
 | [Multiply Strings](https://leetcode.com/problems/multiply-strings/) | Medium | Python (Work in progress) |
