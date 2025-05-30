@@ -165,7 +165,7 @@ A problem set created by Navdeep Singh
 | Problem | Difficulty | Language(s) |
 |---------|------------|-------------|
 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | Easy | [Python](./1DDynamicProgramming/ClimbingStairsEasy/python/) |
-| [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | Easy | Python (Work in progress) |
+| [Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/) | Easy | [Python](./1DDynamicProgramming/MinCostClimbingStairsEasy/python/) |
 | [House Robber](https://leetcode.com/problems/house-robber/) | Medium | Python (Work in progress) |
 | [House Robber II](https://leetcode.com/problems/house-robber-ii/) | Medium | Python (Work in progress) |
 | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | Medium | Python (Work in progress) |
