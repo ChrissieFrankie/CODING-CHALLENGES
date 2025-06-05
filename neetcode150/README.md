@@ -127,7 +127,7 @@ A problem set created by Navdeep Singh
 
 | Problem | Difficulty | Language(s) |
 |---------|------------|-------------|
-| [Implement Trie Prefix Tree](https://leetcode.com/problems/implement-trie-prefix-tree/) | Medium | Python (Work in progress) |
+| [Implement Trie Prefix Tree](https://leetcode.com/problems/implement-trie-prefix-tree/) | Medium | [Python](./Tries/ImplementTriePrefixTreeMedium/python) |
 | [Design Add And Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/) | Medium | Python (Work in progress) |
 | [Word Search II](https://leetcode.com/problems/word-search-ii/) | Hard | Python (Work in progress) |
 
