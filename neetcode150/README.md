@@ -6,7 +6,7 @@ A problem set created by Navdeep Singh
 
 |Problem|Difficulty|Language(s)|
 |-------|----------|-----------|
-|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](./ArraysAndHashing/ContainsDuplicateEasy/python) [C](./ArraysAndHashing/ContainsDuplicateEasy/c)|
+|[Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)|Easy|[Python](./ArraysAndHashing/ContainsDuplicateEasy/python) [C](./ArraysAndHashing/ContainsDuplicateEasy/c) [Rust](comming soon!)|
 |[Valid Anagram](https://leetcode.com/problems/valid-anagram/)|Easy|[Python](./ArraysAndHashing/ValidAnagramEasy/python) [C](./ArraysAndHashing/ValidAnagramEasy/c)|
 |[Two Sum](https://leetcode.com/problems/two-sum/)|Easy|[Python](./ArraysAndHashing/TwoSumEasy/python)|
 |[Group Anagrams](https://leetcode.com/problems/group-anagrams/)|Medium|[Python](./ArraysAndHashing/GroupAnagramsMedium/python)|
