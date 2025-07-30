@@ -16,4 +16,16 @@ class Solution:
                 right -= 1
         return res # return max area
     
+    def maxAreaSecond(self, height: List[int]) -> int: # just move the lowest height position away from the edges ACCEPTED
+        n = len(height) # length of nums
+        left, right = 0, n - 1 # start with largest container
+        max_area = 0 # area result
+        while left < right: 
+            current_area = min(height[left], height[right]) * (right - left) # container area
+            max_area = max(max_area, current_area) # container area
+            if height[left] <= height[right]: # move inward for the lowest height position
+                left += 1
+            else:
+                right -= 1
+        return max_area # return max area
 
