@@ -23,7 +23,7 @@ A problem set created by Navdeep Singh
 |[Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|Easy|[Python](./TwoPointers/ValidPalindromeEasy/python)|
 |[Two Sum II Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|Medium|[Python](./TwoPointers/TwoSum2InputArrayIsSortedMedium/python)|
 |[3Sum](https://leetcode.com/problems/3sum/) | Medium | [Python](./TwoPointers/3Sum/python/) |
-|[Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Medium | Python (Wosrk in progress) |
+|[Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Medium | [Python](./TwoPointers/ContainerWithMostWater/python/) |
 |[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | Hard | Python (Work in progress) |
 
 
